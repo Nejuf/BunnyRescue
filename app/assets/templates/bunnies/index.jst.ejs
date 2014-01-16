@@ -1,0 +1,8 @@
+Bunny Index
+<ul id="bunnies">
+	<% _(bunnies).each(function(bunny) { %>
+		<li id="bunny_<%= bunny.id %>">
+			<%= bunny.get('name') %>
+		</li>
+	<% }); %>
+</ul>

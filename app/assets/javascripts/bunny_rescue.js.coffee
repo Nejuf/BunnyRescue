@@ -5,9 +5,16 @@ window.BunnyRescue =
 	Routers: {}
 
 	initialize: () ->
-		new BunnyRescue.Router
-			$rootEl: $('#main')
-		Backbone.history.start()
+		BunnyRescue.bunnies = new BunnyRescue.Collections.Bunnies()
+
+		# TODO have app start without fetching all bunnies
+		BunnyRescue.bunnies.fetch
+			success: () ->
+				new BunnyRescue.Router
+					$rootEl: $('#main')
+				Backbone.history.start()
+			error: (collection, response, options) ->
+				console.log("Error fetching bunnies.", collection, resp)
 
 $(document).ready () ->
 	BunnyRescue.initialize()

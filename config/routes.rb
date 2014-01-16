@@ -2,6 +2,7 @@ BunnyRescue::Application.routes.draw do
   root 'info#home'
   resources :users, only: [:create, :index, :show, :update, :destroy]
   resource :session, only: [:create, :destroy]
+  resources :bunnies, only: [:create, :index, :show, :update, :destroy]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
