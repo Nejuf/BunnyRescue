@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
 	after_initialize :ensure_session_token
 
+	has_many :bunnies
+	
 	def self.find_by_credentials(username, pass)
 		user = User.find_by(name: username)
 
