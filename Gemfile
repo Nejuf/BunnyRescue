@@ -35,6 +35,7 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2', require: 'bcrypt'
 
+gem 'backbone-on-rails'
 gem 'figaro'
 gem 'gon', '4.1.1'
 gem 'haml-rails'

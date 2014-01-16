@@ -6,4 +6,10 @@ BunnyRescue.Router = Backbone.Router.extend
 		"": "index"
 
 	index: () ->
-		console.log("index")
+		view = new BunnyRescue.Views.Home
+		this._swapView(view)
+		
+	_swapView: (view) ->
+		this._currentView && this._currentView.remove()
+		this._currentView = view
+		this.$rootEl.html(view.render().$el)
