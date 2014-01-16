@@ -37,7 +37,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'figaro'
 gem 'gon', '4.1.1'
-gem 'haml'
+gem 'haml-rails'
 gem 'jquery-turbolinks'
 gem 'js-routes'
 gem 'redis-rails'
