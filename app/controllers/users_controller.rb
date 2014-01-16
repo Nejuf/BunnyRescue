@@ -50,8 +50,8 @@ class UsersController < ApplicationController
 			render json: @user, status: 400
 		end
 	end
-
-	# def user_params
-	# 	params[:user].permit(:name, :password)
-	# end
+private
+	def user_params
+		params[:user].permit(:name, :password)
+	end
 end
