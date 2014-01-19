@@ -2,7 +2,17 @@ Bunny Index
 <ul id="bunnies">
 	<% _(bunnies).each(function(bunny) { %>
 		<li id="bunny_<%= bunny.id %>">
-			<%= bunny.get('name') %>
+		<img src="http://www.urbanfarmonline.com/images/rabbit-keeping/rabbit-stats_490.jpg" alt="placeholder+image">
+			<h2><%= bunny.get('name') %></h2>
+			<p><label>Status:</label> <%= bunny.get('status') || "Unknown" %></p>
+			<p><label>Age:</label> <%= BunnyUtils.monthStringToYears(bunny.get('age')) %></p>
+			<p><label>Temperment:</label> <%= bunny.get('temperment') || "Unknown" %></p>
+			<p><label>Owner:</label> <%= bunny.get('owner_id') || "None" %></p>
+			<p><label>Gender:</label> <%= bunny.get('gender') ? bunny.get('gender').toUpperCase() : "Unknown" %></p>
+			<p><label>Fixed:</label> <%= bunny.get('fixed') === true ? 'Yes' : 'No' %></p>
+			<p><label>Description:</label> <%= bunny.get('desc') %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 		</li>
 	<% }); %>
 </ul>
